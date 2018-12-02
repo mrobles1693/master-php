@@ -22,7 +22,7 @@
 
 $color = "verde";
 
-if($color=="rojo"){
+if ($color == "rojo") {
     echo "El color es rojo. </br>";
 } else {
     echo "El color no es rojo. </br>";
@@ -32,11 +32,11 @@ echo "<hr>";
 
 $año = 2017;
 
-if($año==2018){
+if ($año == 2018) {
     echo "Es el año actual. </br>";
-} else if ($año>2018){
+} else if ($año > 2018) {
     echo "Es el año posterior a 2018. </br>";
-} else{
+} else {
     echo "Es un año anterior a 2018.</br>";
 }
 
@@ -50,9 +50,9 @@ echo "<hr>";
 
 $edad = 41;
 
-if($edad>=18 && $edad<=40){
+if ($edad >= 18 && $edad <= 40) {
     echo "Esta dentro del rango de edad para trabajar. </br>";
-} else{
+} else {
     echo "No esta en edad para trabajar.</br>";
 }
 
@@ -60,9 +60,9 @@ echo "<hr>";
 
 $pais = "Peru";
 
-if($pais == "Peru" || $pais== "Argentina" || $pais=="España"){
+if ($pais == "Peru" || $pais == "Argentina" || $pais == "España") {
     echo "En este pais se habla español. </br>";
-} else{
+} else {
     echo "Aqui se habla otro idioma.</br>";
 }
 
@@ -79,30 +79,42 @@ switch ($dia) {
     case 2:
         echo 'Martes </br>';
         break;
-    
+
     case 3:
         echo 'Miercoles </br>';
         break;
-    
+
     case 4:
         echo 'Jueves </br>';
         break;
-    
+
     case 5:
         echo 'Viernes </br>';
         break;
-    
+
     case 6:
         echo 'Sabado </br>';
         break;
-    
+
     case 7:
         echo 'Domingo </br>';
         break;
-    
+
     default:
         echo 'No esta dentro de la semana. <br>';
         break;
 }
 
+echo '<hr>';
+// GOTO
+goto marca;
+echo "<h3>Instruccion1</h3>";
+echo "<h3>Instruccion2</h3>";
+echo "<h3>Instruccion3</h3>";
+echo "<h3>Instruccion4</h3>";
+
+marca:
+    echo 'Me he saltado 4 echos. </br>';
+
+echo "Ya pase la marca. </br>"
 ?>
