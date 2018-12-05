@@ -1,6 +1,6 @@
 <footer>
     <hr>
-    -- Todos los reservados &copy; Mario Robles <?= date("Y");  ?> --
+    -- Todos los reservados &copy; <?= $nombre?> <?= date("Y");  ?> --
 </footer>
 </body>
 </html>

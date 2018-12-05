@@ -5,6 +5,13 @@
         <title>Includes en PHP</title>
     </head>
     <body>
+        
+        <?php
+        
+        $nombre = "Mario Robles";
+        
+        ?>
+        
         <div class="cabecera">
             <h1>Includes PHP </h1>
             <ul>
