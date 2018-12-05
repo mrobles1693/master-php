@@ -1,5 +1,8 @@
 <?php
-include './includes/cabecera.php';
+/*
+ * Require, para que funcione el fichero que incluyes debe existir si o si
+ */
+require './includes/cabecera.php';
 ?>
 
 <div>
@@ -8,5 +11,9 @@ include './includes/cabecera.php';
 </div>
 
 <?php
-include './includes/footer.php';
+/*
+ * Require_once, para que funcione el fichero que incluyes debe existir si o si
+ * y solo te permite llamar una vez a esta clase
+ */
+require_once ''; './includes/footer.php';
 ?>
