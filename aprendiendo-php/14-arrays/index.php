@@ -10,6 +10,12 @@ $pelicula = "Batman";
 
 $peliculas = array("Batman", "Superman", "Aquaman"); 
 
-var_dump($peliculas);
+$cantantes = ['2pac', 'Drake', 'Jennifer Lopez'];
+
+echo $peliculas[0];
+
+echo '</br>';
+
+echo $cantantes[0];
 
 ?>
