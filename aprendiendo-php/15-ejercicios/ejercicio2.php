@@ -1,8 +1,13 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$arreglo = array();
 
+for ($i = 0; $i < 120; $i++) {
+    array_push($arreglo, random_int(0, 1000));
+}
+
+foreach ($arreglo as $key => $value) {
+    echo $key.' => '.$value. '</br>';
+}
+
+?>
