@@ -30,7 +30,7 @@
         <input type="email" name="email" required="required"><br/>
 
         <label for="pass">Pass</label>
-        <input type="password" name="pass" required="required"><br/>
+        <input type="password" name="pass" required="required" minlength="6"><br/>
 
         <input type="submit" value="Enviar">
     </form>
