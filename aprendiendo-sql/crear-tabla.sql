@@ -17,9 +17,9 @@ BIGINT
 */
 
 CREATE TABLE usuarios(
-id  int(11),
-nombre varchar(100),
-apellidos varchar(255),
-email varchar(100),
-password varchar(255)
+id          int(11)         not null,
+nombre      varchar(100)    not null,
+apellidos   varchar(255)    default 'Hola que tal',
+email       varchar(100)    not null,
+password    varchar(255)
 );
