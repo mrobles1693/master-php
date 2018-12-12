@@ -1,25 +1,33 @@
 <?php
 $resultado = false;
+
 if (isset($_POST['x']) && isset($_POST['y'])) {
 
     $x = (int) $_POST['x'];
     $y = (int) $_POST['y'];
-    
-    if ($x >= $y) {
-        switch ($_POST['operacion']) {
-            case 'Sumar':
-                $resultado = $x + $y;
-                break;
-            case 'Restar':
-                $resultado = $x - $y;
-                break;
-            case 'Multiplicar':
-                $resultado = $x * $y;
-                break;
-            case 'Dividir':
-                $resultado = $x / $y;
-                break;
+
+    if ($x != 0 && $y != 0) {
+        if ($x >= $y) {
+            $resultado = "El resultado es: ";
+            switch ($_POST['operacion']) {
+                case 'Sumar':
+                    $resultado .= ($x + $y);
+                    break;
+                case 'Restar':
+                    $resultado .= ($x - $y);
+                    break;
+                case 'Multiplicar':
+                    $resultado .= ($x * $y);
+                    break;
+                case 'Dividir':
+                    $resultado .= ($x / $y);
+                    break;
+            }
+        }else{
+            $resultado = "El primer número debe ser mayor que el segundo.";
         }
+    }else{
+        $resultado = "Deben ingresar números.";
     }
 }
 ?>
@@ -46,6 +54,6 @@ if (isset($_POST['x']) && isset($_POST['y'])) {
 <?php
 if ($resultado != false) {
     echo '<hr>';
-    echo "El resultado es: $resultado";
+    echo $resultado;
 }
 ?>
