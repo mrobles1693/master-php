@@ -34,3 +34,4 @@ SELECT * FROM usuarios WHERE apellidos LIKE '%a%';
 SELECT * FROM usuarios WHERE (YEAR(fecha)%2) = 0;
 
 SELECT UPPER(nombre), apellidos FROM usuarios WHERE (LENGTH(nombre)>=5) AND (YEAR(fecha)<2020);
+
