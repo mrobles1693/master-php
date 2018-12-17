@@ -7,3 +7,8 @@
 
 
 SELECT * FROM usuarios WHERE id IN(SELECT usuario_id from entradas);
+
+SELECT nombre, apellidos WHERE id
+IN(
+SELECT usuario_id FROM entradas WHERE titulo LIKE '%GTA%';
+);
