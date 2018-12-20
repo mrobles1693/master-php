@@ -1,6 +1,5 @@
 <?php require_once './includes/cabecera.php';?>
 
-        <div id="contenedor">
             <!-- BARRA LATERAL -->
             <?php require_once './includes/lateral.php';?>
 
@@ -60,9 +59,5 @@
                 </div>
 
             </div>
-
-            <div class="clearfix"></div>
-        </div>
-
 <!--FOOTER-->
 <?php require_once './includes/pie.php';?>
