@@ -10,7 +10,5 @@ function mostrarError($errores, $campo){
 
 function borrarErrores(){
     $_SESSION['errores'] = NULL;
-    $borrado = session_unset($_SESSION['errores']);
-    
-    return $borrado;
+    unset($_SESSION['errores']);
 }

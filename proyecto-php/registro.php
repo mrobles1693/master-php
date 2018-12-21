@@ -46,6 +46,7 @@ if(isset($_POST)){
     }
     
     $guardar_usuario = false;
+    
     if(count($errores) == 0){
         $guardar_usuario = true;
         //Insertar usuario en BD

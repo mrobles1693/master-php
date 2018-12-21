@@ -36,6 +36,6 @@
 
             <input type="submit" value="REGISTRAR" name="submit">
         </form>
-        <?php borrarErrores(); ?>
+        <?php isset($_SESSION['errores']) ? borrarErrores(): ''; ?>
     </div>
 </aside>
