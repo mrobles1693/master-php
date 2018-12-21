@@ -5,11 +5,11 @@ if (isset($_POST)) {
     require_once './includes/conexion.php';
 
     // Recoger los valores del formulario
-    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : FALSE;
-    $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : FALSE;
-    $email = isset($_POST['email']) ? $_POST['email'] : FALSE;
-    $password = isset($_POST['password']) ? $_POST['password'] : FALSE;
-
+    $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : FALSE;
+    $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : FALSE;
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : FALSE;
+    $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : FALSE;
+    
     //Array de Errores
     $errores = array();
 
@@ -57,7 +57,7 @@ if (isset($_POST)) {
         //Insertar usuario
         $sql = "INSERT INTO usuarios VALUES(null,'$nombre',  '$apellidos','$email','$password_segura', CURDATE());";
         $guardar = mysqli_query($db, $sql);
-
+              
         if ($guardar) {
             $_SESSION['completado'] = "El registro se ha completado";
         } else {
