@@ -16,7 +16,14 @@
     </div>
 
     <div id="register" class="bloque">
-        <h3>Registrate</h3>
+        <h3>Registrate</h3>        
+        <?php if (isset($_SESSION['completado'])){  
+            echo $_SESSION['completado']; 
+            }else if(isset($_SESSION['error_insert'])){
+                echo $_SESSION['error_insert'];                
+            } 
+        ?>
+        
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre">
@@ -38,4 +45,5 @@
         </form>
         <?php isset($_SESSION['errores']) ? borrarErrores(): ''; ?>
     </div>
+    
 </aside>
