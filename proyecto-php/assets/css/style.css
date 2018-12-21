@@ -218,3 +218,7 @@ input[type="submit"]{
     padding: 5px;
     text-align: center;
 }
+
+.alerta alerta-error{
+   color: red;
+}
