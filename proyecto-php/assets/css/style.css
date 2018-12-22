@@ -140,7 +140,8 @@ input[type="password"]{
 }
 
 input[type="button"],
-input[type="submit"]{
+input[type="submit"],
+.boton{
     margin-top: 5px;
     margin-bottom: 5px;
     
@@ -153,6 +154,18 @@ input[type="submit"]{
     padding: 7px;
 }
 
+.alerta{
+   padding: 5px;
+   font-size: 12px;
+   color: white;
+   background: green;
+   box-shadow: 0px 1px 3px #ccc;
+   margin-bottom: 15px;
+}
+
+.alerta-error{
+    background: #ff9999;    
+}
 /*PRINCIPAL*/
 #principal{
     float: left;
@@ -217,8 +230,4 @@ input[type="submit"]{
     height: auto;
     padding: 5px;
     text-align: center;
-}
-
-.alerta alerta-error{
-   color: red;
 }

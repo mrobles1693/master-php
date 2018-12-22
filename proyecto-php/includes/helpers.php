@@ -13,4 +13,5 @@ function borrarErrores(){
     $_SESSION['completado'] = NULL;
     unset($_SESSION['errores']);
     unset($_SESSION['completado']);
+    unset($_SESSION['error_insert']);
 }

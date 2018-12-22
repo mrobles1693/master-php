@@ -7,7 +7,7 @@ if (isset($_POST)) {
     // Recoger los valores del formulario
     $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : FALSE;
     $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : FALSE;
-    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : FALSE;
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : FALSE;
     $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : FALSE;
     
     //Array de Errores
@@ -59,14 +59,16 @@ if (isset($_POST)) {
         $guardar = mysqli_query($db, $sql);
               
         if ($guardar) {
+            $_SESSION['clear'] = true;
             $_SESSION['completado'] = "El registro se ha completado";
         } else {
+            $_SESSION['clear'] = true;
             $_SESSION['error_insert'] = mysqli_error($db);
         }
     } else {
+        $_SESSION['clear'] = true;
         $_SESSION['errores'] = $errores;
-
     }
 }
 
-        header("Location: index.php");
+header("Location: index.php");
