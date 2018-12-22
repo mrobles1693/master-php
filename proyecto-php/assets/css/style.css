@@ -154,6 +154,13 @@ input[type="submit"],
     padding: 7px;
 }
 
+.boton-naranja{
+    background: #ffcc00;
+}
+.boton-verde{
+    background: #66cc00;
+}
+
 .alerta{
    padding: 5px;
    font-size: 12px;
@@ -164,7 +171,7 @@ input[type="submit"],
 }
 
 .alerta-error{
-    background: #ff9999;    
+    background: #ff3333;    
 }
 /*PRINCIPAL*/
 #principal{
