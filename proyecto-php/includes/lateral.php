@@ -8,6 +8,7 @@
             <strong><?= $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'] ?></strong>
             <!--Botones-->
             <a href="cerrar.php" class="boton boton-verde">Crear entradas</a>
+            <a href="cerrar.php" class="boton boton-verde">Crear categoria</a>
             <a href="cerrar.php" class="boton boton-naranja">Mis datos</a>
             <a href="cerrar.php" class="boton">Cerrar Sesión</a>
         </div>

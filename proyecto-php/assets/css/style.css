@@ -154,6 +154,12 @@ input[type="submit"],
     padding: 7px;
 }
 
+.boton{
+    text-align: center;
+    width: 130px;
+    border: none;
+}
+
 .boton-naranja{
     background: #ffcc00;
 }
