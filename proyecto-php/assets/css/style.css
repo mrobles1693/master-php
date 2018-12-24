@@ -167,6 +167,10 @@ input[type="submit"],
     background: #66cc00;
 }
 
+.boton-rojo{
+    background: red;
+}
+
 .alerta{
    padding: 5px;
    font-size: 12px;
