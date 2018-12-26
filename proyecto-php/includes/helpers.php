@@ -15,3 +15,15 @@ function borrarErrores(){
     unset($_SESSION['completado']);
     unset($_SESSION['error_insert']);
 }
+
+function conseguirCategoria($conexion){
+    $sql = "SELECT * FROM categorias ORDER BY id ASC";
+    $categorias = mysqli_query($conexion, $sql);
+   
+    $result = array();
+    if($categorias && mysqli_num_rows(($categorias)) >= 1){
+        $result = $categorias;
+    }
+    
+    return $result;
+}
