@@ -3,24 +3,38 @@
 if (isset($_POST)) {
 
     require_once './includes/conexion.php';
-
-    $nombre = '';
-    if (isset($_POST['nombre'])) {
-        $nombre = mysqli_real_escape_string($db, $_POST['nombre']);
+    
+    var_dump($_POST);
+    
+    if (isset($_POST['titulo'])) {
+        $titulo = mysqli_real_escape_string($db, $_POST['titulo']);
     }
+    if (isset($_POST['descripcion'])) {
+        $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
+    }
+    if (isset($_POST['categoria'])) {
+        $categoria = (int) $_POST['categoria'];
+    }
+    
+    $usuario = $_SESSION['usuario']['id'];
     
     $errores = array();
     
-    if(!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)){
-        $nombre_valido = true;
-    } else {
-        $nombre_valido = FALSE;
-        $errores['nombre'] = "El nombre no es valido. ";
+    if(empty($titulo)){
+        $errores['titulo'] = "El titulo no puede estar vacio.";
+    }
+    if(empty($descripcion)){
+        $errores['descripcion'] = "La descripcion no puede estar vacia.";
+    }
+    if(empty($categoria) && !is_numeric($categoria)){
+        $errores['categoria'] = "La categoria no es válida.";
     }
     
-    if($nombre_valido){
-        $sql = "INSERT INTO categorias VALUES (null, '$nombre');";
+    if(count($errores)==0){
+        $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
         $guardar = mysqli_query($db, $sql);
+    }else{
+        $_SESSION["errores_entrada"] = $errores;
     }
 }
 
