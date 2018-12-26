@@ -15,9 +15,11 @@
     <form action="guardar-entrada.php" method="POST">
         <label for="titulo">Titulo</label>
         <input type="text" name="titulo">
+        <?php echo isset($_SESSION["errores_entrada"]["titulo"]) ? mostrarError($_SESSION["errores_entrada"], "titulo") : ''?>
         
         <label for="descripcion">Descripción</label>
         <textarea type="text" name="descripcion"></textarea>
+        <?php echo isset($_SESSION["errores_entrada"]["descripcion"]) ? mostrarError($_SESSION["errores_entrada"], "descripcion") : ''?>
         
         <label for="categoria">Categoria</label>
         <select name="categoria">
@@ -33,7 +35,14 @@
                 <?php endif;?>
         </select>
         
+        <?php echo isset($_SESSION["errores_entrada"]["categoria"]) ? mostrarError($_SESSION["errores_entrada"], "categoria") : ''?>
+        
         <input type="submit" value="Guardar">
+        <?php if(isset($_SESSION["errores_entrada"])){
+            $_SESSION["errores_entrada"] = null;
+            unset($_SESSION["errores_entrada"]);
+        }
+        ?>
     </form>
 </div>
 
