@@ -27,7 +27,7 @@
                     </li>
                     <?php
                     $categorias = conseguirCategoria($db);
-                    if($categorias):?>
+                    if(!empty($categorias)):?>
                         <?php while($categoria = mysqli_fetch_assoc($categorias)):?>
                     
                             <li>

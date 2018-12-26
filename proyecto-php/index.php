@@ -6,54 +6,26 @@
             <!--CAJA PRINCIPAL-->
             <div id="principal">
                 <h1>Ultimas Entradas</h1>
+                
+                <?php
+                    $entradas = conseguirUltimasEntradas($db);
+                    if(!empty($entradas)):
+                        while ($entrada = mysqli_fetch_assoc($entradas)):
+                ?>
+                
                 <article class="entrada">
                     <a href="">
-                        <h2>Titulo de mi entrada</h2>
+                        <h2><?= $entrada['titulo']?></h2>
+                        <span class="fecha"><?= $entrada['categoria']." | ".$entrada['fecha'] ?></span>
                         <p>
-                            DESCRIPCION DE MI ENTRADA.
-
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                            <?= substr($entrada['descripcion'],0,100).'...'?>
                         </p>
                     </a>
                 </article>
-
-                <article class="entrada">
-                    <a href="">
-                        <h2>Titulo de mi entrada</h2>
-                        <p>
-                            DESCRIPCION DE MI ENTRADA.
-
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                        </p>
-                    </a>
-                </article>
-
-                <article class="entrada">
-                    <a href="">
-                        <h2>Titulo de mi entrada</h2>
-                        <p>
-                            DESCRIPCION DE MI ENTRADA.
-
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                        </p>
-                    </a>
-                </article>
-
-                <article class="entrada">
-                    <a href="">
-                        <h2>Titulo de mi entrada</h2>
-                        <p>
-                            DESCRIPCION DE MI ENTRADA.
-
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                        </p>
-                    </a>
-                </article>
-
+                
+                    <?php endwhile;?>
+                <?php endif;?>
+                
                 <div id="ver-todas">
                     <a href="">Ver todas las entradas</a>
                 </div>
