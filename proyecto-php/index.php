@@ -27,7 +27,7 @@
                 <?php endif;?>
                 
                 <div id="ver-todas">
-                    <a href="">Ver todas las entradas</a>
+                    <a href="entradas.php">Ver todas las entradas</a>
                 </div>
 
             </div>

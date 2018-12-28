@@ -35,6 +35,7 @@ if (isset($_POST)) {
         $guardar = mysqli_query($db, $sql);
         header("Location: index.php");
     }else{
+        $_SESSION['clear'] = true;
         $_SESSION["errores_entrada"] = $errores;
         header("Location: crear-entradas.php");
     }

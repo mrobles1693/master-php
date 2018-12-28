@@ -38,11 +38,8 @@
         <?php echo isset($_SESSION["errores_entrada"]["categoria"]) ? mostrarError($_SESSION["errores_entrada"], "categoria") : ''?>
         
         <input type="submit" value="Guardar">
-        <?php if(isset($_SESSION["errores_entrada"])){
-            $_SESSION["errores_entrada"] = null;
-            unset($_SESSION["errores_entrada"]);
-        }
-        ?>
+        <?php isset($_SESSION['clear']) ? borrarErrores(): ''; ?>
+
     </form>
 </div>
 

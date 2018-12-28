@@ -1,5 +1,9 @@
 <?php
 
+if(!isset($_SESSION)){
+    session_start();
+}
+
 function mostrarError($errores, $campo){
     if(isset($errores[$campo]) && !empty($campo)){
         $alerta = "<div class='alerta alerta-error'>".$errores[$campo]."</div>";
@@ -15,6 +19,7 @@ function borrarErrores(){
     unset($_SESSION['completado']);
     unset($_SESSION['error_insert']);
     unset($_SESSION['error_update']);
+    unset($_SESSION["errores_entrada"]);
 }
 
 function conseguirCategoria($conexion){
