@@ -14,6 +14,7 @@ function borrarErrores(){
     unset($_SESSION['errores']);
     unset($_SESSION['completado']);
     unset($_SESSION['error_insert']);
+    unset($_SESSION['error_update']);
 }
 
 function conseguirCategoria($conexion){
