@@ -26,7 +26,7 @@
                         <a href="index.php">Inicio</a>
                     </li>
                     <?php
-                    $categorias = conseguirCategoria($db);
+                    $categorias = conseguirCategorias($db);
                     if(!empty($categorias)):?>
                         <?php while($categoria = mysqli_fetch_assoc($categorias)):?>
                     

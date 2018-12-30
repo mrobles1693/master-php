@@ -23,7 +23,7 @@
         
         <label for="categoria">Categoria</label>
         <select name="categoria">
-            <?php $categorias = conseguirCategoria($db);
+            <?php $categorias = conseguirCategorias($db);
                 if(!empty($categorias)):?>
                     <?php while($categoria = mysqli_fetch_assoc($categorias)):?>
                     
