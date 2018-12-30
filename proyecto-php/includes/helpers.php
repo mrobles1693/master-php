@@ -34,11 +34,13 @@ function conseguirCategoria($conexion){
     return $result;
 }
 
-function conseguirUltimasEntradas($conexion){
+function conseguirEntradas($conexion, $limit = NULL){
     $sql = "SELECT e.*, c.nombre AS categoria FROM entradas e "
             . "INNER JOIN categorias c ON e.categoria_id = c.id "
-            . "ORDER BY e.fecha DESC "
-            . "LIMIT 4";
+            . "ORDER BY e.fecha DESC ";
+    if($limit){
+        $sql .= "LIMIT $limit";
+    }
     
     $entradas = mysqli_query($conexion, $sql);
     

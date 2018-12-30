@@ -8,7 +8,7 @@
                 <h1>Ultimas Entradas</h1>
                 
                 <?php
-                    $entradas = conseguirUltimasEntradas($db);
+                    $entradas = conseguirEntradas($db,4);
                     if(!empty($entradas)):
                         while ($entrada = mysqli_fetch_assoc($entradas)):
                 ?>
