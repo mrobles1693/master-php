@@ -1,0 +1,29 @@
+<?php require_once './includes/cabecera.php'; ?>
+<?php require_once './includes/lateral.php'; ?>
+
+<!--CAJA PRINCIPAL-->
+<?php
+$entrada = conseguirEntrada($db, $_GET['id']);
+if (!isset($entrada['id'])) {
+    header("Location: index.php");
+}
+?>
+
+<div id="principal">                
+    <h1><?= $entrada['titulo'] ?></h1>
+
+    <article class="entrada">
+        <h2>Autor: <?= $entrada['usuario'] ?></h2>
+        <a class="fecha" href="categoria.php?id=<?=$entrada['categoria_id']?>"><?= $entrada['categoria']?></a>
+        <h4><?= $entrada['fecha'] ?></h4>
+        <p>
+            <?= $entrada['descripcion'] ?>
+        </p>
+    </article>
+    
+    <?php if(isset($_SESSION['usuario'])): ?>
+    <?php endif;?>
+    
+</div>
+<!--FOOTER-->
+<?php require_once './includes/pie.php'; ?>
