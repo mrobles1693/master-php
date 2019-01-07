@@ -4,8 +4,6 @@ if (isset($_POST)) {
 
     require_once './includes/conexion.php';
     
-    var_dump($_POST);
-    
     if (isset($_POST['titulo'])) {
         $titulo = mysqli_real_escape_string($db, $_POST['titulo']);
     }
@@ -31,12 +29,24 @@ if (isset($_POST)) {
     }
     
     if(count($errores)==0){
-        $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
+        if(isset($_GET['editar'])){
+            $entrada_id = $_GET['editar'];
+            $sql = "UPDATE entradas SET categoria_id=$categoria, titulo ='$titulo', descripcion ='$descripcion' "
+                    . "WHERE id = $entrada_id "
+                    . "AND usuario_id = $usuario;";
+        }else{
+            $sql = "INSERT INTO entradas VALUES(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
+        }
         $guardar = mysqli_query($db, $sql);
+        echo mysqli_error($db);
         header("Location: index.php");
     }else{
         $_SESSION['clear'] = true;
         $_SESSION["errores_entrada"] = $errores;
-        header("Location: crear-entradas.php");
+        if(isset($_GET['editar'])){
+            header("Location: editar-entrada.php?id=".$_GET['editar']);
+        }else{
+            header("Location: crear-entradas.php");
+        }
     }
 }
