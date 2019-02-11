@@ -73,3 +73,11 @@ class Informatico extends Persona{
         return "Estoy escribiendo en word";
     }
 }
+
+class TecnicoRedes extends Informatico{
+    public $auditarRedes;
+    
+    public function auditoria() {
+        return "Estoy auditando una red"; 
+    }
+}

@@ -10,3 +10,6 @@ $informatico = new Informatico();
 $informatico->setAltura(1.90);
 $informatico->sabeLenguajes("PHP, JS, etc");
 var_dump($informatico);
+
+$tecnico = new TecnicoRedes();
+var_dump($tecnico);
