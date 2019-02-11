@@ -60,7 +60,6 @@ class Informatico extends Persona{
         $this->experienciaProgramador = 10;
     }
 
-
     public function sabeLenguajes($lenguajes){
         $this->lenguajes = $lenguajes;
         
@@ -82,7 +81,13 @@ class Informatico extends Persona{
 
 class TecnicoRedes extends Informatico{
     public $auditarRedes;
+    public $experienciaRedes;
     
+    public function __construct() {
+        $this->auditarRedes = "experto";
+        $this->experienciaRedes = 5;
+    }
+
     public function auditoria() {
         return "Estoy auditando una red"; 
     }
