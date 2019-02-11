@@ -84,6 +84,7 @@ class TecnicoRedes extends Informatico{
     public $experienciaRedes;
     
     public function __construct() {
+        parent::__construct();
         $this->auditarRedes = "experto";
         $this->experienciaRedes = 5;
     }
