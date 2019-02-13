@@ -1,8 +1,17 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class Ususario {
 
+    public $nombre;
+    public $email;
+    
+    public function __construct() {
+        echo "Instancia de objeto creada </br>";
+    }
+    
+    public function __destruct() {
+        echo "Destruyendo objeto </br>";
+    }
+}
+
+$usuario = new Ususario();
