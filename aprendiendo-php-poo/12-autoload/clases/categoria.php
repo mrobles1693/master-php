@@ -1,7 +1,5 @@
 <?php
 
-namespace clases;
-
 class Categoria{
     public $nombre;
     public $descripcion;

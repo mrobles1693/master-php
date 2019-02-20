@@ -1,7 +1,5 @@
 <?php
 
-namespace clases;
-
 class Usuario{
     public $nombre;
     public $email;

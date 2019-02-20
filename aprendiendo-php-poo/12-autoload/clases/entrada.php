@@ -1,7 +1,5 @@
 <?php
 
-namespace clases;
-
 class Entrada{
     public $titulo;
     public $fecha;
