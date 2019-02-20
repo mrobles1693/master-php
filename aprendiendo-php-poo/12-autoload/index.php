@@ -1,7 +1,7 @@
 <?php
 
-require_once './autoload.php';
-use clases;
+//require_once './autoload.php';
+use clases\Usuario;
 
 //require_once './clases/usuario.php';
 //require_once './clases/categoria.php';

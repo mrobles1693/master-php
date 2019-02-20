@@ -1,6 +1,6 @@
 <?php
 
-namespace MisClases;
+namespace clases;
 
 class Categoria{
     public $nombre;
