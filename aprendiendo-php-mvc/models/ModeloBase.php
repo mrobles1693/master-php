@@ -5,8 +5,9 @@ require_once 'config/database.php';
 class ModeloBase{
     public $db;
     
-    public function conseguirTodos() {
-        return "Conseguir todas";
+    public function conseguirTodos($tabla) {
+        $query = $this->db->query("SELECT * FROM $tabla ORDER BY DESC");
+        return $query;
     }
     
     public function __construct() {
