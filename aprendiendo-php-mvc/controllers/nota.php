@@ -1,6 +1,6 @@
 <?php
 
-class notaController{
+class NotaController{
     public function listar(){
         //modelo
         require_once 'models/nota.php';
@@ -11,7 +11,7 @@ class notaController{
         $nota->setContenido("Hola Mundo PHP MVC");
         
         //Vista
-        require_once 'view/nota/listar.php';
+        require_once 'views/nota/listar.php';
     }
     
     public function crear(){

@@ -2,6 +2,7 @@
 
 <?php
 require_once 'controllers/usuario.php';
+require_once 'controllers/nota.php';
 
 if (isset($_GET['controller']) && class_exists($_GET['controller'].'Controller')) {
 
