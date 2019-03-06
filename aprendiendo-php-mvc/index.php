@@ -1,9 +1,9 @@
 <h1>Bienvenido a mi web con MVC</h1>
 
 <?php
-require_once './controllers/usuario.php';
+require_once 'controllers/usuario.php';
 
-if (isset($_GET['controller']) && class_exists($_GET['controller'])) {
+if (isset($_GET['controller']) && class_exists($_GET['controller'].'Controller')) {
 
     $nombre_controlador = $_GET['controller'] . 'Controller';
     $controlador = new $nombre_controlador();
