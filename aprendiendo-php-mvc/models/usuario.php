@@ -9,6 +9,10 @@ class Usuario extends ModeloBase{
     public $email;
     public $password;
     
+    function __construct() {
+        parent::__construct();        
+    }
+    
     function getNombre() {
         return $this->nombre;
     }
