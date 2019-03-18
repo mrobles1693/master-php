@@ -20,6 +20,20 @@ class ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PHPThumb\\Tests' => 
+            array (
+                0 => __DIR__ . '/..' . '/masterexploder/phpthumb/tests',
+            ),
+            'PHPThumb' => 
+            array (
+                0 => __DIR__ . '/..' . '/masterexploder/phpthumb/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Datamatrix' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
         'PDF417' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
@@ -43,6 +57,7 @@ class ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit7c40d0918d4c0ac90a1c849d19039766::$classMap;
 
         }, null, ClassLoader::class);
